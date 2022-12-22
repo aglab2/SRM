@@ -1,7 +1,7 @@
 # Virtual Machine
 
-This tutorial describes the setup for the virtual machine stored on paperspace.com
-* Register on paperspace.com and create a VM with GPU+ profile (~0.5$/h)
+This tutorial describes the setup for the virtual machine stored on coreweave.com
+* Register on coreweave.com and create a VM on LGA1, RTX 4000, 8 Cores, Windows 10
 * * Make sure to use static IP to share with restreamers
 * When machine starts, install the following software
 * * VNC Server with Enterprise License
