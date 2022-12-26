@@ -5,7 +5,7 @@ This tutorial describes the setup for the virtual machine stored on coreweave.co
 * * Make sure to use static IP to share with restreamers
 * When machine starts, install the following software
 * * Virtual Audio Cable
-* * Parsed & VNC Server with Enterprise License
+* * Parsec & VNC Server with Enterprise License
 * * cmder
 * * MPV
 * * streamlink
