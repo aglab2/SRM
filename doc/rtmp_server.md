@@ -6,7 +6,7 @@ RTMP Servers are used to avoid restreaming content from twitch servers. Unlikely
 * * The recommended machine setup is 'Regular with SSD' + '$12/month' machine, there is no need to buy a beefy one.
 * * Make sure appropriate 'Authentication' so 'ssh' can be used.
 * * I suggest using good names for 'Choose a hostname' as it will make it easier to distinguish the droplets.
-* Connect to the droplet over SSH and follow https://github.com/speedruns/marathons/blob/master/rtmp.md to setup 'nginx' + 'rtmp server' till 'Multi-server Setup' section.
+* Connect to the droplet over SSH and follow https://github.com/aglab2/SRM/blob/main/doc/rtmp.md to setup 'nginx' + 'rtmp server' till 'Multi-server Setup' section.
 * * Make sure to check http://nginx.org/download/ for the newest version of nginx, as of time of writing http://nginx.org/download/nginx-1.23.1.tar.gz is the latest one so download command should look like this:
 ```
 wget http://nginx.org/download/nginx-1.15.1.tar.gz
