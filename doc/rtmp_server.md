@@ -2,7 +2,7 @@
 RTMP Servers are used to avoid restreaming content from twitch servers. Unlikely twitch, RTMP servers do not introduce extra delay and do not have any ads.
 
 * Register account at digitalocean.com.
-* Create a main droplet - either New York or San Francisco depending on where VM or restream PC is going to be. Droplet is basically a tiny VM hosted on digitalocean servers.
+* Create a main droplet - New York matching LGA1 for coreweave. Droplet is basically a tiny VM hosted on digitalocean servers.
 * * The recommended machine setup is 'Regular with SSD' + '$12/month' machine, there is no need to buy a beefy one.
 * * Make sure appropriate 'Authentication' so 'ssh' can be used.
 * * I suggest using good names for 'Choose a hostname' as it will make it easier to distinguish the droplets.
