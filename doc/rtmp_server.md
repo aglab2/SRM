@@ -27,6 +27,3 @@ us/san francisco  = rtmp://IP2/live
 eu/amsterdam      = rtmp://IP3/live
 asia/singapore    = rtmp://IP4/live
 ```
-
-# TODO
-* Copy script for rtmp setup to this repo.
