@@ -79,6 +79,7 @@
             this.buttonTurnR = new System.Windows.Forms.Button();
             this.pictureBoxL = new System.Windows.Forms.PictureBox();
             this.pictureBoxR = new System.Windows.Forms.PictureBox();
+            this.labelTop2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBackground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxL)).BeginInit();
@@ -685,11 +686,23 @@
             this.pictureBoxR.TabIndex = 49;
             this.pictureBoxR.TabStop = false;
             // 
+            // labelTop2
+            // 
+            this.labelTop2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTop2.ForeColor = System.Drawing.SystemColors.Control;
+            this.labelTop2.Location = new System.Drawing.Point(13, 18);
+            this.labelTop2.Name = "labelTop2";
+            this.labelTop2.Size = new System.Drawing.Size(234, 51);
+            this.labelTop2.TabIndex = 50;
+            this.labelTop2.Text = "labelTopPicture2";
+            this.labelTop2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Geoguessr
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 815);
+            this.Controls.Add(this.labelTop2);
             this.Controls.Add(this.pictureBoxR);
             this.Controls.Add(this.pictureBoxL);
             this.Controls.Add(this.buttonTurnR);
@@ -805,6 +818,7 @@
         private System.Windows.Forms.Button buttonTurnR;
         private System.Windows.Forms.PictureBox pictureBoxL;
         private System.Windows.Forms.PictureBox pictureBoxR;
+        private System.Windows.Forms.Label labelTop2;
     }
 }
 

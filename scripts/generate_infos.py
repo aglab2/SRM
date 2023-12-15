@@ -49,7 +49,7 @@ def load_table(path):
 
 class Run:
     def __init__(self, id, name, category, runners, hours, minutes):
-        self.hack_id = id.split('-')[0]
+        self.hack_id = id
         self.hack_name = name
         self.category = category
         self.hours = "" if int(hours) == 0 else hours
@@ -103,7 +103,7 @@ if __name__ == '__main__':
                                                    , entry[SCHEDULING_COLUMN_RUNNER_DISCORD]
                                                    , entry[SCHEDULING_COLUMN_RUNNER_NAME]
                                                    , runner_id_flags) for entry in scheduling if entry[SCHEDULING_COLUMN_RUNNER_ID] }
-    runners['to be determined'] = Runner('to be determined', 'to be determined', 'to be determined', runner_id_flags)
+    runners['TBD'] = Runner('to be determined', 'to be determined', 'to be determined', runner_id_flags)
     runners['Lots of Runners'] = Runner('Lots of Runners', 'Lots of Runners', 'Lots of Runners', runner_id_flags)
 
     hacks = { entry[1] : Hack(entry[0], entry[1], entry[2], entry[3], entry[4]) for entry in load_table(HACKS_TABLE_PATH) }

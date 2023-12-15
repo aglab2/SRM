@@ -152,6 +152,7 @@ namespace Geoguessr
             pictureBox1.Visible = false;
             labelPictureB.Text = "";
             labelPictureT.Text = "";
+            labelTop2.Text = "";
             buttonAnswer.Enabled = false;
             buttonPoints1.Enabled = false;
             buttonPoints2.Enabled = false;
@@ -242,6 +243,13 @@ namespace Geoguessr
             labelPictureT.Font = Font;
             ScaleFont(labelPictureT, 36);
 
+            labelTop2.Parent = labelPictureT;
+            labelTop2.BackColor = Color.Transparent;
+            labelTop2.Text = "";
+            labelTop2.Font = Font;
+            labelTop2.TextAlign = ContentAlignment.TopLeft;
+            ScaleFont(labelTop2, 20);
+
             labelPictureB.Parent = pictureBoxBackground;
             labelPictureB.BackColor = Color.Transparent;
             labelPictureB.Text = "";
@@ -268,14 +276,6 @@ namespace Geoguessr
             //Timer.Tick += this.TimerTick;
         }
 
-        static float[][] fadeMatrix = {
-            new float[] {1, 0, 0, 0, 0},
-            new float[] {0, 1, 0, 0, 0},
-            new float[] {0, 0, 1, 0, 0},
-            new float[] {0, 0, 0, 1, 0},
-            new float[] {0, 0, 0, 0, 1}
-        };
-
         private void button1_Click(object sender, EventArgs e)
         {
             CurrentQuestion = Buttons[sender as Button];
@@ -295,27 +295,15 @@ namespace Geoguessr
 
             labelPictureT.Text = "Which hack is this image from?";
             ScaleFont(labelPictureT, 36);
+            labelTop2.Text = title;
+            ScaleFont(labelTop2, 18);
 
-            string text = "";
+            string text;
             try
             {
-                var cmds = File.ReadAllLines(Path.Combine(QuizDir(), title, "cmd.txt"));
-                var cmd = cmds[ScoreForButtonNumber(CurrentQuestion) - 1];
-                var name = "";
-                if (cmd.Contains("creator"))
-                {
-                    if (name.Length != 0)
-                        name += "/";
-
-                    name += "Creator";
-                }
-                if (cmd.Contains("course"))
-                {
-                    if (name.Length != 0)
-                        name += " or ";
-
-                    name += "Course";
-                }
+                var answersFile = Path.Combine(QuizDir(), title, ScoreForButtonNumber(CurrentQuestion).ToString() + ".txt");
+                var answers = File.ReadAllLines(answersFile);
+                var name = answers[2];
                 text = $"Name {name} for extra points!";
             }
             catch (Exception)
@@ -361,21 +349,14 @@ namespace Geoguessr
             {
                 var title = TitleForButtonNumber(CurrentQuestion);
                 var answersFile = Path.Combine(QuizDir(), title, ScoreForButtonNumber(CurrentQuestion).ToString() + ".txt");
-                bool idx = false;
-                foreach (var line in File.ReadAllLines(answersFile))
-                {
-                    if (idx)
-                    {
-                        labelPictureB.Text = line;
-                        ScaleFont(labelPictureB, 36);
-                    }
-                    else
-                    {
-                        idx = true;
-                        labelPictureT.Text = line;
-                        ScaleFont(labelPictureT, 36);
-                    }
-                }
+                var answers = File.ReadAllLines(answersFile);
+
+                labelPictureT.Text = answers[0];
+                ScaleFont(labelPictureT, 36);
+                labelTop2.Text = "";
+
+                labelPictureB.Text = answers[1];
+                ScaleFont(labelPictureB, 36);
             }
             catch(Exception) { }
 
