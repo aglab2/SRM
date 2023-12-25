@@ -52,7 +52,7 @@ class Run:
         self.hack_id = id
         self.hack_name = name
         self.category = category
-        self.hours = "" if int(hours) == 0 else hours
+        self.hours = "" if hours == '' or hours == '?' or int(hours) == 0 else hours
         self.minutes = minutes
         self.runner_ids = [ id.strip() for id in runners.split(',') ]
 
@@ -104,7 +104,10 @@ if __name__ == '__main__':
                                                    , entry[SCHEDULING_COLUMN_RUNNER_NAME]
                                                    , runner_id_flags) for entry in scheduling if entry[SCHEDULING_COLUMN_RUNNER_ID] }
     runners['TBD'] = Runner('to be determined', 'to be determined', 'to be determined', runner_id_flags)
+    runners['???'] = Runner('to be determined', 'to be determined', 'to be determined', runner_id_flags)
+    runners['host AA/AGL'] = Runner('AGL', 'aglab2', 'aglab2', runner_id_flags)
     runners['Lots of Runners'] = Runner('Lots of Runners', 'Lots of Runners', 'Lots of Runners', runner_id_flags)
+    runners['contestants TBD'] = Runner('Lots of Runners', 'Lots of Runners', 'Lots of Runners', runner_id_flags)
 
     hacks = { entry[1] : Hack(entry[0], entry[1], entry[2], entry[3], entry[4]) for entry in load_table(HACKS_TABLE_PATH) }
 
