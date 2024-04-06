@@ -293,24 +293,24 @@ namespace Geoguessr
             }
             catch (Exception) { }
 
-            labelPictureT.Text = "Which hack is this image from?";
-            ScaleFont(labelPictureT, 36);
-            labelTop2.Text = title;
-            ScaleFont(labelTop2, 18);
-
-            string text;
+            string text = "Name creator for extra points!";
+            string upText = "Which hack is this image from?";
             try
             {
                 var answersFile = Path.Combine(QuizDir(), title, ScoreForButtonNumber(CurrentQuestion).ToString() + ".txt");
                 var answers = File.ReadAllLines(answersFile);
                 var name = answers[2];
                 text = $"Name {name} for extra points!";
+                if (answers.Count() > 3)
+                    upText = $"Which {answers[3]} is this image from?";
             }
             catch (Exception)
-            {
-                text = "Name creator for extra points!";
-            }
+            { }
 
+            labelPictureT.Text = upText;
+            ScaleFont(labelPictureT, 36);
+            labelTop2.Text = title;
+            ScaleFont(labelTop2, 18);
             labelPictureB.Text = text;
             ScaleFont(labelPictureB, 36);
 
