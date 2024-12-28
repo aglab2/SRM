@@ -25,6 +25,7 @@ This tutorial describes the setup for the virtual machine stored on coreweave.co
 * Use selective sync in MEGASync to synchronize only needed single folder to C:/SRM
 * Install all Kurri fonts.
 * Deploy OBS and load the JSON file from 'obs' folder. Provide the paths for missing files in C:/SRM
+* In music select the folder with all the tracks C:/SRM/music. Click on cog near music >  Open Tools > Tuna Settings. Change refresh rate to 200ms. Click "Add New". Set song info path to C:/tuna.txt, set format to "{album} - {artists} - {title}". In VLC tab select "Slideshow" scene and add "music" source. Go back to "Basic", select "VLC" song source Click "OK". Click "Apply", click "Start".
 * Put files in 'config' folder to %appdata%
 * Fix paths using script in fix_path.lua
 * Setup all info_* scripts in OBS
