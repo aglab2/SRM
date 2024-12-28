@@ -16,7 +16,7 @@ This tutorial describes the setup for the virtual machine stored on coreweave.co
 * * LiveSplit
 * * VLC
 * * Sordum dControl
-* Run dControl and disable all antivirus features. 
+* Run dControl and disable all antivirus features except for Firewall. Make sure to check Windows Security panel as well.
 * In RustDesk set permanent password and remember the id.
 * Unpack cmder to C:/cmder and mpv to C:/mpv.
 * Pin C:/cmder/cmder.exe to task bar. Launch, if asked select "Unblock and Continue"
