@@ -18,6 +18,7 @@ This tutorial describes the setup for the virtual machine stored on coreweave.co
 * * Sordum dControl
 * * Tuna OBS
 * Run dControl and disable all antivirus features except for Firewall. Make sure to check Windows Security panel as well.
+* Search for "environment" and select "Edit the system environment variables". Add C:/mpv to environment variables
 * Mute all system sounds in volume mixer (right click sound icon > Volume Mixer). Disable all notifications & actions.
 * In RustDesk set permanent password and remember the id.
 * Unpack cmder to C:/cmder and mpv to C:/mpv.
@@ -30,9 +31,6 @@ This tutorial describes the setup for the virtual machine stored on coreweave.co
 * Put files in 'config' folder to %appdata%
 * Fix paths using script in fix_path.lua
 * Setup all info_* scripts in OBS
-
-# Add paths to env vars
-Search for "environment" and select "Edit the system environment variables".
 
 # Watching
 
