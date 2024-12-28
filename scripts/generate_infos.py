@@ -108,6 +108,7 @@ if __name__ == '__main__':
     runners['host AA/AGL'] = Runner('AGL', 'aglab2', 'aglab2', runner_id_flags)
     runners['Lots of Runners'] = Runner('Lots of Runners', 'Lots of Runners', 'Lots of Runners', runner_id_flags)
     runners['contestants TBD'] = Runner('Lots of Runners', 'Lots of Runners', 'Lots of Runners', runner_id_flags)
+    runners['participants'] = Runner('Lots of Runners', 'Lots of Runners', 'Lots of Runners', runner_id_flags)
 
     hacks = { entry[1] : Hack(entry[0], entry[1], entry[2], entry[3], entry[4]) for entry in load_table(HACKS_TABLE_PATH) }
 
