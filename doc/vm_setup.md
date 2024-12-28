@@ -14,6 +14,9 @@ This tutorial describes the setup for the virtual machine stored on coreweave.co
 * * OBS
 * * Notepad++
 * * LiveSplit
+* * VLC
+* * Sordum dControl
+* Run dControl and disable all antivirus features. 
 * In RustDesk set permanent password and remember the id.
 * Unpack cmder to C:/cmder and mpv to C:/mpv.
 * Pin C:/cmder/cmder.exe to task bar. Launch, if asked select "Unblock and Continue"
