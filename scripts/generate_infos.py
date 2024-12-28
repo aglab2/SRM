@@ -22,12 +22,15 @@ SCHEDULING_COLUMN_RUN_MINUTES = 6
 SCHEDULING_COLUMN_RUNNER_ID = 8
 SCHEDULING_COLUMN_RUNNER_DISCORD = 9
 SCHEDULING_COLUMN_RUNNER_NAME = 10
+SCHEDULING_COLUMN_RUNNER_TIMEZONE = 11
+SCHEDULING_COLUMN_RUNNER_PRONOUNS = 12
 
 INFO_FMT_CODENAME = "codename = {codename}\n"
 INFO_FMT_HACKNAME = "hackname = {hackname}\n"
 INFO_FMT_CREATOR = "creator = {creator}\n"
 INFO_FMT_RUNNER = "runner{num} = {name}\n"
 INFO_FMT_FLAG = "flag{num} = {flag}\n"
+INFO_FMT_PRONOUNS = "pronouns{num} = {pronouns}\n"
 INFO_FMT_CATEGORY = "category = {category}\n"
 INFO_FMT_ESTIMATE = "estimate = {estimate}\n"
 INFO_FMT_SCROLL = "scroll = {scroll}\n"
@@ -66,10 +69,11 @@ class Run:
         return self.__str__()
 
 class Runner:
-    def __init__(self, id, discord, name, runner_id_flags):
+    def __init__(self, id, discord, name, runner_id_flags, pronouns):
         self.id = id
         self.name = name if name else discord
         self.flag = runner_id_flags[id]
+        self.pronouns = pronouns
  
     def __str__(self):
         return f"Runner(id={self.id}, name='{self.name}', flag={self.flag})"
@@ -102,13 +106,20 @@ if __name__ == '__main__':
     runners = { entry[SCHEDULING_COLUMN_RUNNER_ID] : Runner(entry[SCHEDULING_COLUMN_RUNNER_ID]
                                                    , entry[SCHEDULING_COLUMN_RUNNER_DISCORD]
                                                    , entry[SCHEDULING_COLUMN_RUNNER_NAME]
-                                                   , runner_id_flags) for entry in scheduling if entry[SCHEDULING_COLUMN_RUNNER_ID] }
-    runners['TBD'] = Runner('to be determined', 'to be determined', 'to be determined', runner_id_flags)
-    runners['???'] = Runner('to be determined', 'to be determined', 'to be determined', runner_id_flags)
-    runners['host AA/AGL'] = Runner('AGL', 'aglab2', 'aglab2', runner_id_flags)
-    runners['Lots of Runners'] = Runner('Lots of Runners', 'Lots of Runners', 'Lots of Runners', runner_id_flags)
-    runners['contestants TBD'] = Runner('Lots of Runners', 'Lots of Runners', 'Lots of Runners', runner_id_flags)
-    runners['participants'] = Runner('Lots of Runners', 'Lots of Runners', 'Lots of Runners', runner_id_flags)
+                                                   , runner_id_flags
+                                                   , entry[SCHEDULING_COLUMN_RUNNER_PRONOUNS]) for entry in scheduling if entry[SCHEDULING_COLUMN_RUNNER_ID] }
+
+    runner_tbd = Runner('to be determined', 'to be determined', 'to be determined', runner_id_flags, '')
+    runner_lots = Runner('Lots of Runners', 'Lots of Runners', 'Lots of Runners', runner_id_flags, '')
+    runners['TBD'] = runner_tbd
+    runners['???'] = runner_tbd
+    runners['host AA/AGL'] = Runner('AGL', 'aglab2', 'aglab2', runner_id_flags, '')
+    runners['Lots of Runners'] = runner_lots
+    runners['contestants TBD'] = runner_lots
+    runners['Contestants'] = runner_lots
+    runners['participants'] = runner_lots
+    runners['Lads'] = runner_lots
+    runners['(AND?)'] = runners['AND']
 
     hacks = { entry[1] : Hack(entry[0], entry[1], entry[2], entry[3], entry[4]) for entry in load_table(HACKS_TABLE_PATH) }
 
@@ -130,6 +141,8 @@ if __name__ == '__main__':
                 runner = runners[runner_id]
                 info_file.write(INFO_FMT_RUNNER.format(num = num, name = runner.name))
                 info_file.write(INFO_FMT_FLAG.format(num = num, flag = runner.flag))
+                info_file.write(INFO_FMT_PRONOUNS.format(num = num, pronouns = runner.pronouns))
+
             info_file.write(INFO_FMT_CATEGORY.format(category = run.category))
             info_file.write(INFO_FMT_ESTIMATE.format(estimate = run.estimate))
             info_file.write(INFO_FMT_SCROLL.format(scroll = ""))
