@@ -16,6 +16,7 @@ This tutorial describes the setup for the virtual machine stored on coreweave.co
 * * LiveSplit
 * * VLC
 * * Sordum dControl
+* * Tuna OBS
 * Run dControl and disable all antivirus features except for Firewall. Make sure to check Windows Security panel as well.
 * Mute all system sounds in volume mixer (right click sound icon > Volume Mixer). Disable all notifications & actions.
 * In RustDesk set permanent password and remember the id.
