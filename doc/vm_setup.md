@@ -6,7 +6,7 @@ This tutorial describes the setup for the virtual machine stored on coreweave.co
 * When machine starts, install the following software
 * * Virtual Audio Cable
 * * 7zip
-* * Parsec
+* * RustDesk
 * * cmder
 * * MPV
 * * streamlink
