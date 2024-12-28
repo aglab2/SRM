@@ -22,7 +22,8 @@ This tutorial describes the setup for the virtual machine stored on coreweave.co
 * Unpack cmder to C:/cmder and mpv to C:/mpv.
 * Pin C:/cmder/cmder.exe to task bar. Launch, if asked select "Unblock and Continue"
 * Use selective sync in MEGASync to synchronize only needed single folder to C:/SRM
-* Deploy OBS and load the JSON file from 'obs' folder
+* Install all Kurri fonts.
+* Deploy OBS and load the JSON file from 'obs' folder. Provide the paths for missing files in C:/SRM
 * Put files in 'config' folder to %appdata%
 * Fix paths using script in fix_path.lua
 * Setup all info_* scripts in OBS
