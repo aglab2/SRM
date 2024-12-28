@@ -14,11 +14,16 @@ This tutorial describes the setup for the virtual machine stored on coreweave.co
 * * OBS
 * * Notepad++
 * * LiveSplit
+* In RustDesk set permanent password and remember the id.
+* Unpack cmder to C:/cmder and mpv to C:/mpv.
 * Use selective sync in MEGASync to synchronize only needed single folder
 * Deploy OBS and load the JSON file from 'obs' folder
 * Put files in 'config' folder to %appdata%
 * Fix paths using script in fix_path.lua
 * Setup all info_* scripts in OBS
+
+# Add paths to env vars
+Search for "environment" and select "Edit the system environment variables".
 
 # Watching
 
