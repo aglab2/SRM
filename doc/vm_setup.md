@@ -4,7 +4,7 @@ This tutorial describes the setup for the virtual machine stored on coreweave.co
 * Register on coreweave.com and create a VM on LGA1, RTX 4000, 8 Cores, Windows 10
 * * Make sure to use static IP to share with restreamers
 * When machine starts, install the following software
-* * Virtual Audio Cable
+* * Virtual Audio Cable Lite
 * * 7zip
 * * RustDesk
 * * cmder
@@ -17,6 +17,7 @@ This tutorial describes the setup for the virtual machine stored on coreweave.co
 * * VLC
 * * Sordum dControl
 * Run dControl and disable all antivirus features except for Firewall. Make sure to check Windows Security panel as well.
+* Mute all system sounds in volume mixer (right click sound icon > Volume Mixer). Disable all notifications & actions.
 * In RustDesk set permanent password and remember the id.
 * Unpack cmder to C:/cmder and mpv to C:/mpv.
 * Pin C:/cmder/cmder.exe to task bar. Launch, if asked select "Unblock and Continue"
