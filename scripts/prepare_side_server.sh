@@ -10,7 +10,7 @@ rtmp {
       play_restart on;
       record off;
       
-      push rtmp://157.245.113.176/live;
+      push rtmp://159.203.83.20/live;
     }
   }
 }
