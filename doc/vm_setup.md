@@ -17,6 +17,7 @@ This tutorial describes the setup for the virtual machine stored on coreweave.co
 * * VLC
 * * Sordum dControl
 * * Tuna OBS
+* * uBlock Origin
 * Run dControl and disable all antivirus features except for Firewall. Make sure to check Windows Security panel as well.
 * Search for "environment" and select "Edit the system environment variables". Add C:/mpv to environment variables
 * Mute all system sounds in volume mixer (right click sound icon > Volume Mixer). Disable all notifications & actions.
