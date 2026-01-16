@@ -32,6 +32,8 @@ This tutorial describes the setup for the virtual machine stored on coreweave.co
 * Put files in 'config' folder to %appdata%
 * Fix paths using script in fix_path.lua
 * Setup all info_* scripts in OBS
+* In OBS disable timestamps for audio device. Click ... near audio > Properties > Use Device Timestamps.
+* Launch OBS with admin rights before marathon starts.
 
 # Watching
 
